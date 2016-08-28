@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+	<title>Site-o-Matic Tutorials: Ajax Image Upload Demo</title>
+    </head>
+    <body>
+
+        <script src="../jquery-ui-1.11.4/external/jquery/jquery.js" type="text/javascript"></script>
+
+<style>
+    div#ajax_upload_demo iframe {
+	position:fixed;
+	left:-9000px;
+	width:1px;
+	height:1px;
+    }
+    div#ajax_upload_demo img {
+	max-width:150px;
+	max-height:150px;
+    }
+</style>
+
+<script type='text/javascript'>
+    $(document).ready(function(){
+	$('#image_upload_form').submit(function(){
+	    $('div#ajax_upload_demo img').attr('src','loading.gif');
+	});
+	$('iframe[name=upload_to]').load(function(){
+	    var result = $(this).contents().text();
+	    if(result !=''){
+		if (result == 'Err:big'){
+		    $('div#ajax_upload_demo img').attr('src','avatar_big.jpg');
+		    return;
+		}
+		if (result == 'Err:format'){
+		    $('div#ajax_upload_demo img').attr('src','avatar_invalid.jpg');
+		    return;
+		}
+		$('div#ajax_upload_demo img').attr('src',$(this).contents().text());
+	    }
+	});
+    });
+</script>
+
+<div id='ajax_upload_demo'>
+    <form id='image_upload_form' method='post' enctype='multipart/form-data' action='add_avatar.php' target='upload_to'>
+	<p>Upload avatar</p>
+	<p><img src='avatar_no.jpg' /></p>
+	<p><input type='file' id='file_browse' name='image'/> <input type='submit' value='Submit'></p>
+    </form>
+    <iframe name='upload_to'>
+    </iframe>
+</div>
+    </body>
+</html>

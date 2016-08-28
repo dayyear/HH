@@ -1,0 +1,67 @@
+                    #region 类型
+
+                    if (LX != null)
+                    {
+                        LX = LX.Trim();
+                        if (LX.Length == 0)
+                            whereList.Add("[LX] IS NULL");
+                        else
+                        {
+                            whereList.Add("[LX]=@LX");
+                            Common.AddSqlParameter(cmdCount, "@LX", SqlDbType.VarChar, LX);
+                            Common.AddSqlParameter(cmdItems, "@LX", SqlDbType.VarChar, LX);
+                        }
+                    }
+
+                    #endregion
+
+                    #region 代码
+
+                    if (DM != null)
+                    {
+                        DM = DM.Trim();
+                        if (DM.Length == 0)
+                            whereList.Add("[DM] IS NULL");
+                        else
+                        {
+                            whereList.Add("[DM]=@DM");
+                            Common.AddSqlParameter(cmdCount, "@DM", SqlDbType.VarChar, DM);
+                            Common.AddSqlParameter(cmdItems, "@DM", SqlDbType.VarChar, DM);
+                        }
+                    }
+
+                    #endregion
+
+                    #region 名称
+
+                    if (MC != null)
+                    {
+                        MC = MC.Trim();
+                        if (MC.Length == 0)
+                            whereList.Add("[MC] IS NULL");
+                        else
+                        {
+                            whereList.Add("[MC] LIKE @MC");
+                            Common.AddSqlParameter(cmdCount, "@MC", SqlDbType.VarChar, "%" + MC + "%");
+                            Common.AddSqlParameter(cmdItems, "@MC", SqlDbType.VarChar, "%" + MC + "%");
+                        }
+                    }
+
+                    #endregion
+
+                    #region 是否有效
+
+                    if (SFYX != null)
+                    {
+                        SFYX = SFYX.Trim();
+                        if (SFYX.Length == 0)
+                            whereList.Add("[SFYX] IS NULL");
+                        else
+                        {
+                            whereList.Add("[SFYX]=@SFYX");
+                            Common.AddSqlParameter(cmdCount, "@SFYX", SqlDbType.VarChar, SFYX);
+                            Common.AddSqlParameter(cmdItems, "@SFYX", SqlDbType.VarChar, SFYX);
+                        }
+                    }
+
+                    #endregion

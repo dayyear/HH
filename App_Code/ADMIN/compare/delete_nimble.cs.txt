@@ -1,0 +1,23 @@
+#region 类型
+if (LX == null)
+throw new ArgumentNullException("LX", "[类型]不能为null");
+LX = LX.Trim();
+if (LX.Length == 0)
+throw new ArgumentNullException("LX", "[类型]不能为空");
+whereList.Add("[LX]=@LX");
+Common.AddSqlParameter(cmd, "@LX", SqlDbType.VarChar, LX);
+#endregion
+#region 代码
+if (DM == null)
+throw new ArgumentNullException("DM", "[代码]不能为null");
+DM = DM.Trim();
+if (DM.Length == 0)
+throw new ArgumentNullException("DM", "[代码]不能为空");
+whereList.Add("[DM]=@DM");
+Common.AddSqlParameter(cmd, "@DM", SqlDbType.VarChar, DM);
+#endregion
+
+#region VALIDITY
+if (!Select(LX: LX, DM: DM).Any())
+throw new ArgumentException("无效的[类型,代码]: " + LX + "," + DM);
+#endregion

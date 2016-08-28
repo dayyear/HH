@@ -1,0 +1,14 @@
+﻿.dataTable{border-bottom: 1px solid #111;border-collapse: collapse;width:100%;}
+.dataTable thead th, table.dataTable thead td {padding: 10px 18px;border-bottom: 1px solid #111;}
+        
+.dataTable tbody tr {background-color: #ffffff;}
+.dataTable tbody tr.odd {background-color: #f9f9f9;}
+/*.dataTable tbody tr:hover {background-color: #f6f6f6;}
+.dataTable tbody tr.selected {background-color: #B0BED9;}
+.dataTable tbody tr.odd.selected {background-color: #acbad4;}
+.dataTable tbody tr:hover.selected {background-color: #aab7d1;}*/
+.dataTable tbody tr.ui-selected{background-color: #ffe48d;}
+.dataTable tbody tr.ui-selecting{background-color: #ffe48d;}
+
+.dataTable tbody td {border-top: 1px solid #ddd;}
+.dataTable tbody td {padding: 8px 10px;}

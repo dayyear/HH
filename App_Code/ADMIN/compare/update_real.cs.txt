@@ -1,0 +1,89 @@
+                        #region 名称
+
+                        if (MC != null)
+                        {
+                            MC = MC.Trim();
+                            if (MC.Length == 0)
+                                throw new ArgumentNullException("MC", "[名称]不能为空");
+                            setList.Add("[MC]=@MC");
+                            Common.AddSqlParameter(cmd, "@MC", SqlDbType.VarChar, MC);
+                        }
+
+                        #endregion
+
+                        #region 是否有效
+
+                        if (SFYX != null)
+                        {
+                            SFYX = SFYX.Trim();
+                            if (SFYX.Length == 0)
+                                throw new ArgumentNullException("SFYX", "[是否有效]不能为空");
+                            if (!ADMIN.DM.Select(LX: "SFYX", DM: SFYX).Any())
+                                throw new ArgumentException("无效的[是否有效]: " + SFYX, "SFYX");
+                            setList.Add("[SFYX]=@SFYX");
+                            Common.AddSqlParameter(cmd, "@SFYX", SqlDbType.VarChar, SFYX);
+                        }
+
+                        #endregion
+
+                        #region 备注
+
+                        if (BZ != null)
+                        {
+                            BZ = BZ.Trim();
+                            setList.Add("[BZ]=@BZ");
+                            Common.AddSqlParameter(cmd, "@BZ", SqlDbType.VarChar, BZ);
+                        }
+
+                        #endregion
+
+                        #region 排序
+
+                        if (ORDER != null)
+                        {
+                            ORDER = ORDER.Trim();
+                            if (ORDER.Length == 0)
+                                throw new ArgumentNullException("ORDER", "[排序]不能为空");
+                            setList.Add("[ORDER]=@ORDER");
+                            Common.AddSqlParameter(cmd, "@ORDER", SqlDbType.VarChar, ORDER);
+                        }
+
+                        #endregion
+
+                        #region 变动时间
+
+                        setList.Add("[BDSJ]=SYSDATETIME()");
+
+                        #endregion
+
+                        #region 类型
+
+                        if (LX == null)
+                            throw new ArgumentNullException("LX", "[类型]不能为null");
+                        LX = LX.Trim();
+                        if (LX.Length == 0)
+                            throw new ArgumentNullException("LX", "[类型]不能为空");
+                        whereList.Add("[LX]=@LX");
+                        Common.AddSqlParameter(cmd, "@LX", SqlDbType.VarChar, LX);
+
+                        #endregion
+
+                        #region 代码
+
+                        if (DM == null)
+                            throw new ArgumentNullException("DM", "[代码]不能为null");
+                        DM = DM.Trim();
+                        if (DM.Length == 0)
+                            throw new ArgumentNullException("DM", "[代码]不能为空");
+                        whereList.Add("[DM]=@DM");
+                        Common.AddSqlParameter(cmd, "@DM", SqlDbType.VarChar, DM);
+
+                        #endregion
+
+                        #region VALIDITY
+
+                        if (!Select(LX: LX, DM: DM).Any())
+                            throw new ArgumentException("无效的[类型,代码]: " + LX + "," + DM);
+
+                        #endregion
+

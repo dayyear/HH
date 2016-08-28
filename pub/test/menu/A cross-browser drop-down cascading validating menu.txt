@@ -1,0 +1,31 @@
+﻿http://www.cssplay.co.uk/menus/dropdownfun.html
+http://www.cssplay.co.uk/menus/dd_valid.html
+
+Information
+Ok, you asked for it.... so now you've got it.
+A drop-down, cascading menu using JUST css, no javascript or IE behaviors, that works in IE, Firefox and Opera, uses just one menu and passes w3c validation without messing with the !doctype.
+Opera 8 refuses to place the menu over the Google ads, but Opera 9 cures this.
+As with my 'Link Calendar', this one uses IE conditional comments to hide the IE only CSS and the additional links required to open each menu and submenu. The links are held in tables (the only way that IE will work with nested links), which in turn are held in unordered nested lists.
+In this way, with css off, the links will degrade to a nested unordered list as one would expect.
+If you want to play with this one, be warned, it is very tricky as you are playing with parallel css files and a dual purpose menu.
+I have literally been trying to perfect this method for several months, but the breakthrough came with the production of the 'Link Calendar'.
+With this method it is possible to have common CSS and browser specific CSS (nothing unusual there) but also common xhtml and browser specific xhtml.
+The Internet Explorer specific xhtml is hidden in 'conditional comments' and as such is invisible to the w3c validator so the page validates and is viewable as application/xhtml+xml in browsers that understand.
+I hope that you like this one. I think that it is a big improvement on my previous efforts and deserves a place as the ONLY CSS drop down cascading menu on the internet.
+I am now off to convert the vertical flyout menu in the same fashion.
+Enjoy...
+Cascading Style Sheet
+16th March 2006
+Because a lot of visitors are having trouble with the conditional comments and the cascading style sheets for this menu I have now removed the CSS to separate files and now show how to load these into the page.
+If you look at the header of this page you will see that the normal method of loading a file is used for the non-ie browser css.
+<link rel="stylesheet" media="all" type="text/css" href="css/dropdown.css" />
+The dropdown.css file
+The IE only style sheet is loaded using the conditional comment.
+<!--[if lte IE 6]>
+<link rel="stylesheet" media="all" type="text/css" href="css/dropdown_ie.css" />
+<![endif]-->
+The dropdown_ie.css file
+The html
+The xhtml code for the dropdown menu can be seen here in text format.
+You will see that conditional comments have been used to hold the IE specific version of the menu which used nested tables. The other browsers will not see the tables and instead will use the normal unordered lists.
+Please note that you will also need a standards compliant !doctype for this menu to work correctly.

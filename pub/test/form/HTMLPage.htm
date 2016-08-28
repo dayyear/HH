@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../../js/jquery-1.8.3.min.js" type="text/javascript"></script>
+    <script src="../../js/jquery.loadJSON.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            //$("form").loadJSON({"A1":"A2", "C1": 0});
+        });
+    </script>
+</head>
+<body>
+<form action="Default.aspx">
+    <input type="text" name="A1" value="a,b" />
+    <input type="text" name="A1" value="c"/>
+    <input type="checkbox" name="C1" value="v1"/>
+    <input type="checkbox" name="C1" value="v2" />
+    <input type="submit" value="确定"/>
+
+    <br/>
+    国家：
+    <input type="checkbox"/>全部
+    <input type="checkbox"/>中国
+    <input type="checkbox"/>美国
+    <input type="checkbox"/>日本
+</form>
+</body>
+</html>

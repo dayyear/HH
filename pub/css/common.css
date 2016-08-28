@@ -1,0 +1,40 @@
+﻿/*html,body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}*/
+html,body,ol,ul,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{font-size:14px; color:#000; background:#FFF; padding-bottom:2em;}
+div#loading{display: none; position: absolute; top: 50%; left: 50%; margin: -64px 0 0 -64px; z-index: 9999;}
+img{border-width:0;}
+
+div#topNav{border-bottom:1px solid #e9e9e9;background: #fff url('../img/topBar.jpg') repeat-x;padding-top:2px;color:#5c5c5c;height:36px;position: relative;}
+div#topBar{width:1140px;margin:0 auto;height:35px;position:relative}
+div#loginNav{float:left;padding-top:9px;} div#loginWrap{float:right;padding-top:9px;}
+#topBar a{text-decoration:none;color:#5c5c5c;} #topBar a:hover{color: #000;} #topBar a.selected{font-weight:bold;color:#FFC10C;}
+#topBar #username{background: url('../img/user_online.gif') no-repeat 0 2px;padding-left:16px;}
+
+.pipe{margin:0 9px 0 9px;}
+
+div#wrapper{width:1140px;margin:0 auto;}
+
+div#header{height:80px; background: #fff url('../img/logo.jpg') no-repeat left center;}
+#header #title{float:left;font-size:200%; font-weight:bold; padding: 0 0 0 250px; line-height: 80px;}
+
+div#menu{float:right; /*line-height:80px;*/margin-top:30px;}
+#menu a{text-decoration:none;color:#5c5c5c;display:block;} 
+#menu a:hover{color:#000;}
+#menu ul li{position:relative; list-style:none; float:left; padding:6px 0;}
+#menu ul li ul{display:none;}
+#menu ul li:hover ul{display:block; position:absolute; left:0; top:21px;}
+#menu ul li ul li{background: #dcdcdc; width:60px; padding:6px; border:1px solid #fff;}
+
+div#qq{position: fixed; _position: absolute; right:8px; top: 130px; width:134px; background:#fff;}
+
+@media print{.noprint{display:none}}
+
+
+.condition td{padding:3px 6px;}
+.condition th{text-align:right;}
+
+.dialog td{padding:3px 6px;}
+.dialog th{text-align:right;}
+
+.dataTablePagination{float:right;padding-top:8px;padding-bottom:8px;}
+.dataTableInfo{float:left;padding-top:8px;padding-bottom:8px;}
