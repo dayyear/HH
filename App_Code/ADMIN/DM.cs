@@ -161,7 +161,7 @@ namespace ADMIN
                 } //cmd
             } //cn
             return Tuple.Create(items, total);
-        } //SelectWithTotal
+        } //Select
 
         public static int Insert(string LX, string DM, string MC, string SFYX, string BZ, string ORDER)
         {
